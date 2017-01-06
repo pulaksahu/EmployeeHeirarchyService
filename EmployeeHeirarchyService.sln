@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeHeirarchyService", "EmployeeHeirarchyService\EmployeeHeirarchyService.csproj", "{43F9E933-2C33-4F63-AC99-B10B30BF8BA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestClient", "TestClient\TestClient.csproj", "{1EDA4257-6E2A-4779-A2B0-57E928978615}"
+	ProjectSection(ProjectDependencies) = postProject
+		{43F9E933-2C33-4F63-AC99-B10B30BF8BA9} = {43F9E933-2C33-4F63-AC99-B10B30BF8BA9}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{43F9E933-2C33-4F63-AC99-B10B30BF8BA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43F9E933-2C33-4F63-AC99-B10B30BF8BA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43F9E933-2C33-4F63-AC99-B10B30BF8BA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43F9E933-2C33-4F63-AC99-B10B30BF8BA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EDA4257-6E2A-4779-A2B0-57E928978615}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EDA4257-6E2A-4779-A2B0-57E928978615}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EDA4257-6E2A-4779-A2B0-57E928978615}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EDA4257-6E2A-4779-A2B0-57E928978615}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
