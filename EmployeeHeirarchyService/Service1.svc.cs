@@ -15,6 +15,8 @@ namespace EmployeeHeirarchyService
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
     {
+        private object[,] values { get; set; }
+
         public string GetData(int value)
         {
             return string.Format("You entered: {0}", value);
@@ -51,7 +53,7 @@ namespace EmployeeHeirarchyService
             pensheet = (Microsoft.Office.Interop.Excel.Worksheet)pen.Worksheets.get_Item(1);
             
             Microsoft.Office.Interop.Excel.Range range = pensheet.get_Range("A1", "G" + Convert.ToString(Convert.ToInt32(ConfigurationManager.AppSettings["TotalEmployees"]) + 1));  // upto 500 employees, 7 columns (G) at this time
-            object[,] values = (object[,])range.Value2;
+            this.values = (object[,])range.Value2;
 
             int row = 2;  // 1st row contains header info and not the actual employee data, start from row 2
             Employee emp = new Employee();
@@ -66,7 +68,7 @@ namespace EmployeeHeirarchyService
                         emp.title = values[row, 3] != null ? values[row, 3].ToString() : "";
                         emp.position = values[row, 4] != null ? values[row, 4].ToString() : "";
 
-                        CreateReporteeTree(emp, values);
+                        CreateReporteeTree(emp);
                     }
                     row++;
                 }
@@ -84,7 +86,7 @@ namespace EmployeeHeirarchyService
             return jsonObject;
         }
 
-        public void CreateReporteeTree(Employee root, object[,] values)
+        private void CreateReporteeTree(Employee root)
         {
             int row = 2;  // 1st row contains header info and not the actual employee data, start from row 2
 
@@ -104,7 +106,7 @@ namespace EmployeeHeirarchyService
                     
                     root.children.Add(emp);
 
-                    CreateReporteeTree(emp, values);
+                    CreateReporteeTree(emp);
                 }
                 row++;
             }
