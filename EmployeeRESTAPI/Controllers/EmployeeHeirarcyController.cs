@@ -76,7 +76,8 @@ namespace EmployeeRESTAPI.Controllers
 
             root.children = new List<Employee>();
 
-            while (row <= values.GetLength(0))
+            //while (row <= values.GetLength(0))
+            while (values[row, 1] != null) //  loop until the employee id is not null
             {
                 if (Convert.ToInt16(values[row, 5]) == root.EmployeeID)  // all rows who have ManagerID (5th column) as root
                 {
