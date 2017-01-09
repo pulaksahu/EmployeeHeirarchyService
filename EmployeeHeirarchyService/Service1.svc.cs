@@ -52,14 +52,16 @@ namespace EmployeeHeirarchyService
             pen = xlApp.Workbooks.Open(ConfigurationManager.AppSettings["EmployeesFile"]);
             pensheet = (Microsoft.Office.Interop.Excel.Worksheet)pen.Worksheets.get_Item(1);
             
-            Microsoft.Office.Interop.Excel.Range range = pensheet.get_Range("A1", "G" + Convert.ToString(Convert.ToInt32(ConfigurationManager.AppSettings["TotalEmployees"]) + 1));  // upto 500 employees, 7 columns (G) at this time
+            //Microsoft.Office.Interop.Excel.Range range = pensheet.get_Range("A1", "G" + Convert.ToString(Convert.ToInt32(ConfigurationManager.AppSettings["TotalEmployees"]) + 1));
+            Microsoft.Office.Interop.Excel.Range range = pensheet.get_Range("A1", "G5000");  // consider upto 5000 employees, 7 columns (G) at this time
             this.values = (object[,])range.Value2;
 
             int row = 2;  // 1st row contains header info and not the actual employee data, start from row 2
             Employee emp = new Employee();
             try
             {
-                while (row < values.GetLength(0))
+                //while (row < values.GetLength(0))
+                while (values[row, 1] != null) //  loop until the employee id is not null
                 {
                     if(values[row, 5] == null)  // highest manager will have 5th column (manager id) as blank or null
                     {
