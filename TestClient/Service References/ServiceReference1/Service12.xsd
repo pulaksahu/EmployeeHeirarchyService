@@ -7,20 +7,4 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="CompositeType" nillable="true" type="tns:CompositeType" />
-  <xs:complexType name="Employee">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Department" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="EmployeeID" type="xs:short" />
-      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Reportees" nillable="true" type="tns:ArrayOfEmployee" />
-      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="Employee" nillable="true" type="tns:Employee" />
-  <xs:complexType name="ArrayOfEmployee">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Employee" nillable="true" type="tns:Employee" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfEmployee" nillable="true" type="tns:ArrayOfEmployee" />
 </xs:schema>

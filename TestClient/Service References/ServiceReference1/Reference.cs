@@ -74,115 +74,6 @@ namespace TestClient.ServiceReference1 {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Employee", Namespace="http://schemas.datacontract.org/2004/07/EmployeeHeirarchyService")]
-    [System.SerializableAttribute()]
-    public partial class Employee : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DepartmentField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private short EmployeeIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TestClient.ServiceReference1.Employee[] ReporteesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TitleField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Department {
-            get {
-                return this.DepartmentField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DepartmentField, value) != true)) {
-                    this.DepartmentField = value;
-                    this.RaisePropertyChanged("Department");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public short EmployeeID {
-            get {
-                return this.EmployeeIDField;
-            }
-            set {
-                if ((this.EmployeeIDField.Equals(value) != true)) {
-                    this.EmployeeIDField = value;
-                    this.RaisePropertyChanged("EmployeeID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
-            get {
-                return this.NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public TestClient.ServiceReference1.Employee[] Reportees {
-            get {
-                return this.ReporteesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ReporteesField, value) != true)) {
-                    this.ReporteesField = value;
-                    this.RaisePropertyChanged("Reportees");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Title {
-            get {
-                return this.TitleField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TitleField, value) != true)) {
-                    this.TitleField = value;
-                    this.RaisePropertyChanged("Title");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService1")]
     public interface IService1 {
@@ -200,10 +91,10 @@ namespace TestClient.ServiceReference1 {
         System.Threading.Tasks.Task<TestClient.ServiceReference1.CompositeType> GetDataUsingDataContractAsync(TestClient.ServiceReference1.CompositeType composite);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ParseEmployeeFile", ReplyAction="http://tempuri.org/IService1/ParseEmployeeFileResponse")]
-        TestClient.ServiceReference1.Employee ParseEmployeeFile();
+        string ParseEmployeeFile();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ParseEmployeeFile", ReplyAction="http://tempuri.org/IService1/ParseEmployeeFileResponse")]
-        System.Threading.Tasks.Task<TestClient.ServiceReference1.Employee> ParseEmployeeFileAsync();
+        System.Threading.Tasks.Task<string> ParseEmployeeFileAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -249,11 +140,11 @@ namespace TestClient.ServiceReference1 {
             return base.Channel.GetDataUsingDataContractAsync(composite);
         }
         
-        public TestClient.ServiceReference1.Employee ParseEmployeeFile() {
+        public string ParseEmployeeFile() {
             return base.Channel.ParseEmployeeFile();
         }
         
-        public System.Threading.Tasks.Task<TestClient.ServiceReference1.Employee> ParseEmployeeFileAsync() {
+        public System.Threading.Tasks.Task<string> ParseEmployeeFileAsync() {
             return base.Channel.ParseEmployeeFileAsync();
         }
     }

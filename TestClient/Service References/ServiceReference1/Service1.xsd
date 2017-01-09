@@ -37,7 +37,7 @@
   <xs:element name="ParseEmployeeFileResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/EmployeeHeirarchyService" minOccurs="0" name="ParseEmployeeFileResult" nillable="true" type="q3:Employee" />
+        <xs:element minOccurs="0" name="ParseEmployeeFileResult" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

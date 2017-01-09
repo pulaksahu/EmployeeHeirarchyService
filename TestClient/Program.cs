@@ -13,7 +13,7 @@ namespace TestClient
         {
             Service1Client serviceClient = new Service1Client();
 
-            serviceClient.ParseEmployeeFile();
+            string a = serviceClient.ParseEmployeeFile();
         }
     }
 }
